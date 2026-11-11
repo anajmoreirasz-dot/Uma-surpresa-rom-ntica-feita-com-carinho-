@@ -1,0 +1,395 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffe4ed, #fff0f5, #ffd6e5);
+    font-family: 'DM Sans', sans-serif;
+    color: #754052;
+}
+
+main {
+    width: 100%;
+    max-width: 550px;
+    padding: 55px 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid white;
+    border-radius: 28px;
+    box-shadow: 0 15px 45px rgba(160, 75, 105, 0.15);
+    animation: aparecer 1s ease;
+}
+
+.heart {
+    display: block;
+    margin-bottom: 20px;
+    color: #e76b91;
+    font-size: 65px;
+    animation: pulsar 1.5s infinite;
+}
+
+.subtitle {
+    margin-bottom: 15px;
+    color: #bd7890;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin-bottom: 22px;
+    color: #c34d77;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 8vw, 48px);
+}
+
+.message {
+    max-width: 380px;
+    margin: 0 auto 30px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+button {
+    padding: 15px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #e77b9e;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 6px 15px rgba(231, 123, 158, 0.25);
+}
+
+button:hover {
+    transform: translateY(-4px);
+    background: #d85e87;
+}
+
+.footer {
+    margin-top: 35px;
+    color: #bd8b9d;
+    font-size: 12px;
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CARTINHA ROMÂNTICA */
+
+.envelope {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.6s ease;
+}
+
+.envelope.aberta {
+    max-height: 400px;
+    opacity: 1;
+    margin: 25px auto;
+}
+
+.letter {
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    background: #fff8fa;
+    border: 2px dashed #edabc0;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(190, 100, 130, 0.12);
+    animation: aparecer 0.8s ease;
+}
+
+.letter span {
+    display: block;
+    margin: 10px 0;
+    color: #d85e87;
+    font-size: 22px;
+}
+
+.letter p {
+    margin: 15px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #9c526b;
+}
+
+/* CORAÇÕES FLUTUANTES */
+
+.coracao-flutuante {
+    position: fixed;
+    bottom: -30px;
+    color: #e77b9e;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    animation: subirCoracao 6s linear forwards;
+}
+
+@keyframes subirCoracao {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    85% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* SEÇÃO DE ELOGIOS */
+
+.elogios {
+    margin-top: 40px;
+}
+
+.elogios h2 {
+    margin-bottom: 22px;
+    color: #c34d77;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+}
+
+.elogio-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 12px auto;
+    padding: 16px;
+    max-width: 380px;
+    background: #fff0f5;
+    border: 1px solid #f8d4e0;
+    border-radius: 15px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.elogio-card:hover {
+    transform: translateX(5px);
+    background: #ffe5ee;
+}
+
+.elogio-card span {
+    font-size: 25px;
+}
+
+.elogio-card p {
+    color: #92536b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* SURPRESA SECRETA */
+
+.surpresa {
+    margin-top: 40px;
+}
+
+.surpresa h2 {
+    margin-bottom: 12px;
+    color: #c34d77;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+}
+
+.surpresa > p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.mensagem-secreta {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.6s ease;
+}
+
+.mensagem-secreta.visivel {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 25px;
+    padding: 25px 18px;
+    background: #fff0f5;
+    border: 1px dashed #e9a8bd;
+    border-radius: 18px;
+}
+
+.mensagem-secreta h3 {
+    margin-bottom: 15px;
+    color: #c34d77;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
+
+.mensagem-secreta p {
+    margin-bottom: 15px;
+    color: #92536b;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.mensagem-secreta span {
+    color: #d85e87;
+    font-size: 14px;
+}
+
+/* SEÇÃO MUSICAL */
+
+.musica {
+    margin-top: 40px;
+    padding: 25px 15px;
+    background: #fff0f5;
+    border-radius: 20px;
+}
+
+.music-icon {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 35px;
+}
+
+.musica h2 {
+    margin-bottom: 12px;
+    color: #c34d77;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+}
+
+.musica > p {
+    margin-bottom: 20px;
+    color: #92536b;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.music-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 22px;
+    padding: 18px;
+    background: white;
+    border-radius: 15px;
+}
+
+.music-card > span {
+    font-size: 35px;
+}
+
+.music-card h3 {
+    color: #c34d77;
+    font-size: 15px;
+}
+
+.music-card p {
+    margin-top: 5px;
+    color: #a77b8b;
+    font-size: 13px;
+}
+
+.music-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #e77b9e;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.music-link:hover {
+    background: #d85e87;
+    transform: translateY(-3px);
+}
+
+/* ADAPTAÇÃO PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+        align-items: flex-start;
+    }
+
+    main {
+        margin: 15px auto;
+        padding: 35px 18px;
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 280px;
+        padding: 15px;
+    }
+
+    .elogios h2,
+    .surpresa h2,
+    .musica h2 {
+        font-size: 22px;
+    }
+
+    .letter {
+        padding: 20px 15px;
+    }
+
+    .music-card {
+        padding: 15px 10px;
+    }
+
+    .music-link {
+        display: inline-block;
+        max-width: 100%;
+    }
+
+}
